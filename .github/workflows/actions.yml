@@ -67,7 +67,7 @@ jobs:
         NOTIFY_URL: ${{ secrets.NOTIFY_URL }}
         HOSTLOC_USERNAME: ${{ secrets.HOSTLOC_USERNAME }}
         HOSTLOC_PASSWORD: ${{ secrets.HOSTLOC_PASSWORD }}
-      run: python scripts/hostloc/hostloc_get_points.py
+     #  run: python scripts/hostloc/hostloc_get_points.py
     
     # TextNow保号任务
     - name: textnow protect number
