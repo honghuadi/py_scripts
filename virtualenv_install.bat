@@ -6,7 +6,7 @@
 python -m pip install --upgrade virtualenvwrapper-win
 echo:
 echo:
-echo: *** You may  now use virtualenv commands in your command shell. ***
+echo: *** You may now use virtualenv commands in your command shell. ***
 echo:
 echo: virtualenv commands:
 echo:   *  "mkvirtualenv [ENV_NAME]"  -  Create a Python virtual environment
