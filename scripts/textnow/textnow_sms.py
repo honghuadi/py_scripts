@@ -7,6 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 import os
 import time
+import feedparser
 
 import importlib,sys
 importlib.reload(sys)
@@ -125,6 +126,11 @@ class Textnow:
           driver.execute_script("$(arguments[0]).click()", "#newText")
           
         time.sleep(2)
+
+        # updatee self.MESSAGE from RSS
+        d = feedparser.parse('http://feeds.foxnews.com/foxnews/latest?format=xml')
+        self.MESSAGE = d['entries'][0]['title']
+        print(self.MESSAGE)
 
         #输入：短信内容
         try:
