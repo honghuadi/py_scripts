@@ -106,6 +106,11 @@ class Textnow:
     driver.execute_script("$('.modal').remove();")
     time.sleep(2)
     
+    # updatee self.MESSAGE from RSS
+    d = feedparser.parse('http://feeds.foxnews.com/foxnews/latest?format=xml')
+    self.MESSAGE = 'Foxnews: ' + d['entries'][0]['title']
+    print(u'短信内容:' + self.MESSAGE)
+
     for phone in self.PHONE_NUMBER.split(','):
       try:
       
@@ -126,11 +131,6 @@ class Textnow:
           driver.execute_script("$(arguments[0]).click()", "#newText")
           
         time.sleep(2)
-
-        # updatee self.MESSAGE from RSS
-        d = feedparser.parse('http://feeds.foxnews.com/foxnews/latest?format=xml')
-        self.MESSAGE = d['entries'][0]['title']
-        print(self.MESSAGE)
 
         #输入：短信内容
         try:
