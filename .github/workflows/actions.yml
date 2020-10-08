@@ -51,14 +51,6 @@ jobs:
     #    echo "def test_1(): pass" > nothing.py
     #    pytest nothing.py
     
-    # 天翼云盘签到+抽奖
-    - name: Cloud 189 Checkin
-      env:
-        CLOUD189_USER: ${{ secrets.CLOUD189_USER }}
-        CLOUD189_PWD: ${{ secrets.CLOUD189_PWD }}
-      run: |
-        bash scripts/_C189.sh
-    
     # comment out following to skip
     # HostLoc 赚积分
     #- name: 'HostLoc Get points'
@@ -79,3 +71,11 @@ jobs:
         TEXTNOW_MSG: ${{ secrets.TEXTNOW_MSG }}
       run: |
         python scripts/_textnow.py
+
+    # 天翼云盘签到+抽奖
+    - name: Cloud 189 Checkin
+      env:
+        CLOUD189_USER: ${{ secrets.CLOUD189_USER }}
+        CLOUD189_PWD: ${{ secrets.CLOUD189_PWD }}
+      run: |
+        bash scripts/_C189.sh
